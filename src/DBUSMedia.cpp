@@ -44,8 +44,10 @@ void DBUSMedia::OnSignal(GDBusConnection *conn,
     try {
         #pragma GCC diagnostic push
         #pragma GCC diagnostic ignored "-Winline"
+        #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
         Json::Reader reader;
         reader.parse(str, root);
+
         #pragma GCC diagnostic pop
     } catch(std::exception &ex) {
         abort(); //FIXME: Do what exactly?
